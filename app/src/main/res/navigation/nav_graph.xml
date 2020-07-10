@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/NotesListFragment">
+
+    <fragment
+        android:id="@+id/NotesListFragment"
+        android:name="com.dalia.notetakingapplication.noteslist.NotesListFragment"
+        android:label="@string/notes_list_fragment_label"
+        tools:layout="@layout/fragment_notes_list">
+
+        <action
+            android:id="@+id/actionNotesListFragment_to_WriteNoteFragment"
+            app:destination="@id/WriteNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WriteNoteFragment"
+        android:name="com.dalia.notetakingapplication.writenote.WriteNoteFragment"
+        android:label="@string/write_note_fragment_label"
+        tools:layout="@layout/fragment_write_note">
+
+        <action
+            android:id="@+id/action_WriteNoteFragment_to_NotesListFragment"
+            app:destination="@id/NotesListFragment" />
+    </fragment>
+</navigation>
